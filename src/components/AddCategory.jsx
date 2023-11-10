@@ -1,23 +1,21 @@
 import { useState } from 'react';
 
 
-export const AddCategory = ({ setCategories }) => {
+export const AddCategory = ({ onNewCategory }) => {
 
     const [inputValue, setInputValue] = useState('');
 
     const onInputChange = ({ target }) => {
         setInputValue(target.value);
-        console.log(target.value)
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-
-        if (inputValue.trim().length <= 1) return;
+        const value = inputValue.trim();
+        if (value.length <= 1) return;
 
         setInputValue('');
-
-        setCategories(categories => [inputValue, ...categories]);
+        onNewCategory(value);
     }
 
     return (
