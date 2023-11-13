@@ -21,6 +21,7 @@ export const AddCategory = ({ onNewCategory }) => {
     return (
         <form onSubmit={onSubmit}>
             <input
+                className='form-control mb-3'
                 type="text"
                 placeholder="Buscar gifs..."
                 value={inputValue}

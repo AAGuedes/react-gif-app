@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import { getGifs } from '../helpers/getGifs';
+import { GifItem } from './GifItem';
 
 
 export const GifGrid = ({ category }) => {
@@ -17,12 +19,17 @@ export const GifGrid = ({ category }) => {
 
     return (
         <>
-            <h3>{category}</h3>
-            <ol>
+            <h3 className='text-center mt-5 mb-3'>{category}</h3>
+            <div className='d-flex row d-flex justify-content-evenly'>
                 {
-                    images.map(({ id, title }) => <li key={id}>{title}</li>)
+                    images.map((image) => (
+                        <GifItem
+                            key={image.id}
+                            {...image}
+                        />
+                    ))
                 }
-            </ol>
+            </div>
         </>
     )
 }
