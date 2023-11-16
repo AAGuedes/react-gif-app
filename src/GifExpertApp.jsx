@@ -15,7 +15,7 @@ export const GifExpertApp = () => {
     return (
         <>
             <div className='container'>
-                <h1 className='text-center fw-bold my-5'>Gif Expert App</h1>
+                <h1 className='text-center fw-bold my-5'>Gif App</h1>
 
                 <AddCategory
                     onNewCategory={onAddCategory}
