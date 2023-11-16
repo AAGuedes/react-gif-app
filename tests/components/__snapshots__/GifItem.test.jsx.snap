@@ -8,7 +8,7 @@ exports[`Pruebas de <GifItem /> Debe coincidir con la snapshot 1`] = `
     <img
       alt="Title"
       class="card-img-top"
-      src="https://www.localhost.es/"
+      src="https://www.localhost.com/"
     />
     <div
       class="card-body"
