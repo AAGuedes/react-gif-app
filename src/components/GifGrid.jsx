@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { GifItem } from './GifItem';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 
@@ -13,7 +14,10 @@ export const GifGrid = ({ category }) => {
             <div className='d-flex row d-flex justify-content-evenly'>
                 {
                     isLoading && (
-                        <div className="d-flex justify-center spinner-border m-5" role="status" />
+                        <>
+                            <div className="d-flex justify-center spinner-border m-5" role="status" />
+                            <h2>Cargando...</h2>
+                        </>
                     )
                 }
                 {
@@ -27,4 +31,8 @@ export const GifGrid = ({ category }) => {
             </div>
         </>
     )
+}
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired,
 }
